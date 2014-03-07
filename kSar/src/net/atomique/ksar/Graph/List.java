@@ -114,7 +114,7 @@ public class List {
     protected SortedTreeNode parentTreeNode = null;
     protected kSar mysar = null;
     protected String HeaderStr = null;
-    protected Map<String, Graph> nodeHashList = new HashMap<String, Graph>();
+    public Map<String, Graph> nodeHashList = new HashMap<String, Graph>();
     protected int skipColumn = 0;
     protected String Title = null;
     

@@ -244,15 +244,15 @@
                 </Plot>
             </Graph>
             <Graph name="INET1" Title="Interfaces traffic" type="multiple">
-                <Plot Title="packet">
+<!--                <Plot Title="packet">
                     <cols>rxpck/s txpck/s</cols>
-                </Plot>
+                </Plot> -->
                 <Plot Title="bytes">
                     <cols>rxbyt/s txbyt/s rxkB/s txkB/s</cols>
                 </Plot>
-                <Plot Title="cast">
+<!--             <Plot Title="cast">
                     <cols>rxcmp/s txcmp/s rxmcst/s</cols>
-                </Plot>
+                </Plot> -->
             </Graph>
             <Graph name="INET2" Title="Interfaces error" type="multiple">
                 <Plot Title="Rx">
@@ -316,17 +316,14 @@
                 </Plot>
             </Graph>
             <Graph name="KMEM" Title="KMem" type="unique">
-                <Plot Title="KMem">
-                    <cols>kbmemfree kbmemused kbmemshrd kbbuffers kbcached kbcommit</cols>
+                <Stack Title="Details">
+                	<cols>kbmemshrd kbbuffers kbcached kbcommit</cols>
                     <format base="1024" factor="1024"></format>
-                </Plot>
-                <Plot Title="Swap">
-                    <cols>kbswpfree kbswpused kbswpcad</cols>
+                </Stack>
+                <Stack Title="KMem">
+                    <cols>kbmemused kbmemfree</cols>
                     <format base="1024" factor="1024"></format>
-                </Plot>
-                <Plot Title="%">
-                    <cols>%memused %swpused %commit</cols>
-                </Plot>
+                </Stack>                                
             </Graph>
             <Graph name="KSWAP" Title="KSwap" type="unique">
                 <Plot Title="Swap">
@@ -391,16 +388,16 @@
             </Graph>
             <Graph name="CPU" Title="CPU" type="multiple">
                 <Stack Title="Used" size="3">
-                    <cols>%usr %user %nice %sys %iowait %steal %irq %soft %guest</cols>
+                    <cols>%usr %user %nice %system %iowait %steal %irq %soft %guest %idle</cols>
                 </Stack>
                 <!--
                 <Plot Title="other" size="3">
                     <cols>%usr %user %nice %sys %iowait %steal %irq %soft %guest</cols>
                 </Plot>
                 -->
-                <Plot Title="Idle" size="1">
+                <!-- <Plot Title="Idle" size="1">
                     <cols>%idle</cols>
-                </Plot>
+                </Plot> -->
             </Graph>
         </OSType>
     </OS>

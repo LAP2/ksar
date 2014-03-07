@@ -142,6 +142,9 @@
             <color>0,127,255</color>
             <type>counter</type>
         </itemcolor>
+        <itemcolor name="bwrtn/s">
+            <color>0,0,255</color>
+        </itemcolor>       
         <itemcolor name="%busy">
             <color>255,255,0</color>
             <type>gauge</type>

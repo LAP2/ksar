@@ -14,9 +14,11 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import net.atomique.ksar.UI.Desktop;
@@ -249,7 +251,20 @@ public class GlobalOptions {
         }
 
     }
-    private static Desktop UI = null;
+    public static String getOutputPNGBase() {
+		return outputPNGBase;
+	}
+
+	public static void setOutputPNGBase(String outputPNGBase) {
+		GlobalOptions.outputPNGBase = outputPNGBase;
+	}
+	
+	public static Set<String> getGraphList() {
+		return graphList;
+	}
+
+	private static Set<String> graphList = new HashSet<String>();
+	private static Desktop UI = null;
     private static Properties systemprops;
     private static String userhome;
     private static String username;
@@ -260,6 +275,9 @@ public class GlobalOptions {
     private static HashMap<String, HostInfo> HostInfoList;
     private static boolean dodebug = false;
     private static String CLfilename = null;
+    private static String outputPNGBase = null;
     private static HashMap<String, Class> ParserMap;
     private static boolean firstrun = true;
+    
+    
 }
