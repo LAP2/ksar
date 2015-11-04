@@ -1,0 +1,25 @@
+apply plugin: 'gradle-one-jar'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.github.rholder:gradle-one-jar:1.0.4'
+    }
+}
+
+group 'net.atomique.ksar'
+version '5.1.0'
+
+evaluationDependsOnChildren()
+
+task standaloneBuild(type: OneJar, dependsOn: ':ksar-core:build') {
+    mainClass = 'net.atomique.ksar.Main'
+    targetConfiguration = project(':ksar-core').configurations.runtime
+    baseJar = project(':ksar-core').getTasksByName('jar', false).first()
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.8'
+}

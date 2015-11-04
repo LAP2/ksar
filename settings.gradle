@@ -1,0 +1,3 @@
+include 'ksar-core'
+include 'ksar-gui'
+

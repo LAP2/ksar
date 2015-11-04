@@ -2,3 +2,6 @@
 /kSar/build
 /kSar/dist
 /kSar/distrib
+/**/.idea
+/**/build
+/**/.gradle
